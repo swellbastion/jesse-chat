@@ -1,0 +1,16 @@
+{
+  "name": "jesse-chat",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "author": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "compile": "coffee --compile . ",
+    "start": "coffee --compile . && electron ."
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "electron": "^27.0.4"
+  }
+}

@@ -1,0 +1,3 @@
+onDomContentLoaded = main
+
+main = ->
