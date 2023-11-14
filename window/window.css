@@ -5,8 +5,18 @@ body {
     align-items: stretch;
 }
 
-textarea:focus {
+*:focus {
     outline: dashed black;
+}
+
+button {
+    border: 1px solid gray;
+    background: none;
+    padding: 8px;
+}
+
+button:active {
+    background: gray;
 }
 
 .hide {

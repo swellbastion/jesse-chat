@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="window.css">
     </head>
     <body>
+
+        <!-- api choice -->
         <div id="api-choice">
             <label>
                 <input 
@@ -22,13 +24,20 @@
                 Image
             </label>
         </div>
+
+        <!-- text form -->
         <div id="text-form" class="hide">
             <label class="system-prompt-label">
                 System Prompt
                 <textarea></textarea>
             </label>
+            <div id="text-chat-bubbles"></div>
+            <button id="add-chat-bubble">Add Chat Bubble</button>
         </div>
+
+        <!-- image form -->
         <div id="image-form" class="hide"></div>
+
         <script src="window.js"></script>
     </body>
 </html>
