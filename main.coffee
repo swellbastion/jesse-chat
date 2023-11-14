@@ -2,8 +2,8 @@
 
 createWindow = ->
     window = new BrowserWindow
-        width: 800
-        height: 600
+        width: 500
+        height: 809
     window.loadFile "window/window.html"
 
 app.whenReady()

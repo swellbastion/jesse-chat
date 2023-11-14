@@ -4,10 +4,9 @@
     <head>
         <title>Jesse Chat</title>
         <link rel="stylesheet" href="window.css">
-        <script src="window.js"></script>
     </head>
     <body>
-        <div class="api-choice">
+        <div id="api-choice">
             <label>
                 <input 
                     type="radio" 
@@ -23,5 +22,13 @@
                 Image
             </label>
         </div>
+        <div id="text-form" class="hide">
+            <label>
+                System Prompt
+                <textarea></textarea>
+            </label>
+        </div>
+        <div id="image-form" class="hide"></div>
+        <script src="window.js"></script>
     </body>
 </html>

@@ -2,17 +2,21 @@ body {
     margin: 0;
 }
 
-.api-choice {
+.hide {
+    display: none;
+}
+
+#api-choice {
     display: flex;
 }
 
-.api-choice > label {
+#api-choice > label {
     border: 1px solid gray;
     padding: 8px;
     flex-grow: 1;
     text-align: center;
 }
 
-.api-choice > label:not(:last-child) {
+#api-choice > label:not(:last-child) {
     border-right: none;
 }
