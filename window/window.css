@@ -1,5 +1,12 @@
 body {
-    margin: 0;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+textarea:focus {
+    outline: dashed black;
 }
 
 .hide {
@@ -19,4 +26,18 @@ body {
 
 #api-choice > label:not(:last-child) {
     border-right: none;
+}
+
+#text-form > *, #image-form > * {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 16px;
+}
+
+.system-prompt-label > textarea {
+    display: block;
+    resize: none;
+    height: 64px;
+    border: 1px solid gray;
 }
