@@ -29,7 +29,7 @@
         <div id="text-form" class="hide">
             <label class="system-prompt-label">
                 System Prompt
-                <textarea></textarea>
+                <textarea id="system-prompt-textarea"></textarea>
             </label>
             <div id="bubble-zone"></div>
             <button id="add-bubble-button">Add Chat Bubble</button>
@@ -41,17 +41,19 @@
 
         <!-- chat bubble template -->
         <template id="bubble-template">
-            <div class="radio-group">
-                <label>
-                    <input type="radio" >
-                    User
-                </label>
-                <label>
-                    <input type="radio" >
-                    Assistant
-                </label>
+            <div class="bubble">
+                <div class="radio-group">
+                    <label>
+                        <input type="radio">
+                        User
+                    </label>
+                    <label>
+                        <input type="radio">
+                        Assistant
+                    </label>
+                </div>
+                <textarea></textarea>
             </div>
-            <textarea></textarea>
         </template>
 
         <script src="window.js"></script>
