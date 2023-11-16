@@ -31,6 +31,12 @@ addChatBubble = (sender, text) ->
         radioButtons[0].setAttribute "checked", true
     else if sender == "assistant"
         radioButtons[1].setAttribute "checked", true
+        clone.querySelector "textarea"
+            .classList.add("hide")
+        clone.querySelector ".editable-content"
+            .classList.remove("hide")
+    clone.querySelector ".editable-content"
+        .textContent = text
     clone.querySelector "textarea"
         .value = text
     bubbleZone.appendChild clone
