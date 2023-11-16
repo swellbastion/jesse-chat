@@ -1,15 +1,16 @@
-openAI = require "openai"
+OpenAI = require "openai"
 
-openai = new OpenAI
+openai = new OpenAI({dangerouslyAllowBrowser: true})
 
-apiChoiceText = document.querySelector "#api-choice-text"
-apiChoiceImage = document.querySelector "#api-choice-image"
-textForm = document.querySelector "#text-form"
-imageForm = document.querySelector "#image-form"
-systemPromptTextarea = document.querySelector "#system-prompt-textarea"
-bubbleZone = document.querySelector "#bubble-zone"
-addBubbleButton = document.querySelector "#add-bubble-button"
-sendButton = document.querySelector "#send-button"
+apiChoiceText = null
+apiChoiceImage = null
+textForm = null
+imageForm = null
+systemPromptTextarea = null
+bubbleZone = null
+addBubbleButton = null
+sendButton = null
+loadingIndicator = null
 
 activateTextForm = ->
     imageForm.classList.add "hide"
@@ -39,16 +40,27 @@ send = ->
     bubbleProperties = bubbles.map (wrapperElement) -> 
         role: if wrapperElement.querySelector("input[type=radio]").checked then "user" else "assistant"
         content: wrapperElement.querySelector("textarea").value
+    loadingIndicator.classList.remove("hide")
     try
-        completion = openai.chat.completions.create
-            model: "gpt-4"
-            messages: [{role: "system", content: systemPromptTextarea.value}, bubbleProperties]
-        debugger
-        addChatBubble "assistant", completion.choices[0]
+        completion = await openai.chat.completions.create
+            model: "gpt-4-1106-preview"
+            messages: [{role: "system", content: systemPromptTextarea.value}, bubbleProperties...]
+        addChatBubble "assistant", completion.choices[0].message.content
     catch error
         alert error
+    loadingIndicator.classList.add("hide")
 
 main = ->
+    apiChoiceText = document.querySelector "#api-choice-text"
+    apiChoiceImage = document.querySelector "#api-choice-image"
+    textForm = document.querySelector "#text-form"
+    imageForm = document.querySelector "#image-form"
+    systemPromptTextarea = document.querySelector "#system-prompt-textarea"
+    bubbleZone = document.querySelector "#bubble-zone"
+    addBubbleButton = document.querySelector "#add-bubble-button"
+    sendButton = document.querySelector "#send-button"
+    loadingIndicator = document.querySelector "#loading-indicator"
+
     apiChoiceText.addEventListener "click", activateTextForm
     apiChoiceImage.addEventListener "click", activateImageForm
     addBubbleButton.addEventListener "click", -> addChatBubble "user", ""
