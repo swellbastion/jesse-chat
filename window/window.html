@@ -31,12 +31,28 @@
                 System Prompt
                 <textarea></textarea>
             </label>
-            <div id="text-chat-bubbles"></div>
-            <button id="add-chat-bubble">Add Chat Bubble</button>
+            <div id="bubble-zone"></div>
+            <button id="add-bubble-button">Add Chat Bubble</button>
+            <button id="send-button">Send</button>
         </div>
 
         <!-- image form -->
         <div id="image-form" class="hide"></div>
+
+        <!-- chat bubble template -->
+        <template id="bubble-template">
+            <div class="radio-group">
+                <label>
+                    <input type="radio" >
+                    User
+                </label>
+                <label>
+                    <input type="radio" >
+                    Assistant
+                </label>
+            </div>
+            <textarea></textarea>
+        </template>
 
         <script src="window.js"></script>
     </body>
